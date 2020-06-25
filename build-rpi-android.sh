@@ -2,9 +2,9 @@
 set -x
 set -e
 
-WS=$HOME/ws
-GIT_NAME=
-GIT_EMAIL=
+WS=/workspace
+GIT_NAME=admin
+GIT_EMAIL=admin@example.com
 
 sudo apt update
 sudo apt install -y repo git python-mako build-essential

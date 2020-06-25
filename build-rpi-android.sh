@@ -6,8 +6,8 @@ WS=/workspace
 GIT_NAME=admin
 GIT_EMAIL=admin@example.com
 
-sudo apt update
-sudo apt install -y repo git python-mako build-essential
+apt update
+apt install -y repo git python-mako build-essential
 
 mkdir -p ${WS} && cd ${WS}
 git config --global user.name "${GIT_NAME}"
@@ -16,7 +16,7 @@ repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b and
 git clone --depth=1 https://github.com/android-rpi/local_manifests .repo/local_manifests -b oreo
 repo sync  -f --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
 
-sudo apt install -y gcc-arm-linux-gnueabihf
+apt install -y gcc-arm-linux-gnueabihf
 cd kernel/rpi
 ARCH=arm scripts/kconfig/merge_config.sh arch/arm/configs/bcm2709_defconfig kernel/configs/android-base.config kernel/configs/android-base-arm.config kernel/configs/android-recommended.config
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- make zImage

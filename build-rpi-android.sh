@@ -7,7 +7,9 @@ GIT_NAME=admin
 GIT_EMAIL=admin@example.com
 
 apt update
-apt install -y repo git python-mako build-essential
+apt install -y curl git python-mako build-essential
+curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
+chmod a+x /usr/bin/repo
 
 mkdir -p ${WS} && cd ${WS}
 git config --global user.name "${GIT_NAME}"

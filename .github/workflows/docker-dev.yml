@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: cat build-rpi-android.sh | docker run --rm -i -v="$PWD/workspace:/workspace" -w="/workspace" gcc:latest bash
+      run: sudo bash build-rpi-android.sh
     - name: List files
       run: ls -lh $PWD/workspace

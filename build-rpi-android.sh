@@ -7,7 +7,7 @@ GIT_NAME=admin
 GIT_EMAIL=admin@example.com
 
 apt update
-apt install -y curl git python-mako build-essential
+apt install -y m4 curl git python-mako build-essential openjdk-8-jdk
 curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo
 chmod a+x /usr/bin/repo
 
